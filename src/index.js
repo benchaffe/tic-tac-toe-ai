@@ -91,13 +91,9 @@ class Game extends React.Component {
     }
 
     if (winner === 'X') {
-      this.setState({
-        player1win: this.state.player1win+1,
-      })
+      this.state.player1win += 1;
     } else if (winner === 'O') {
-      this.setState({
-        aiwin: this.state.aiwin+1,
-      })
+      this.state.aiwin += 1;
     }
     let results;
     results = "Player 1: " + this.state.player1win + " AI: " + this.state.aiwin;
