@@ -50,6 +50,7 @@ class Game extends React.Component {
       player1win: 0,
       aiwin: 0,
       gameOver: false,
+      playagain: '',
     }
   }
 
@@ -61,6 +62,7 @@ class Game extends React.Component {
         squares: Array(9).fill(null),
         gameOver: false,
         xIsNext: !this.state.xIsNext,
+        playagain: '',
       })
       return;
     }
@@ -81,12 +83,14 @@ class Game extends React.Component {
     const winner = calculateWinner(this.state.squares);
     let status;
     if (winner) {
-      status = 'Winner: ' + winner + ' Click to play again';
+      status = 'Winner: ' + winner;
+      this.state.playagain = 'Click to play again';
       this.state.gameOver = true;
     } else if (!isFull(this.state.squares)) {
       status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
     } else if (isFull(this.state.squares)) {
-      status = 'Result: Tie   Click to play again';
+      status = 'Result: Tie';
+      this.state.playagain = 'Click to play again';
       this.state.gameOver = true;
     }
 
@@ -112,6 +116,7 @@ class Game extends React.Component {
       <h1 className="title">Unbeatable Tic-Tac-Toe AI</h1>
       <div className="game">
         <div className="status">{status}</div>
+        <div className="playagain">{this.state.playagain}</div>
         <div className="game-board">
           <Board
             squares={this.state.squares}

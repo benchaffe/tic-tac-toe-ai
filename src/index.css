@@ -28,12 +28,12 @@ ol, ul {
   font-size: 68px;
   color: #000;
   line-height: 34px;
-  height: 102px;
+  height: 6.5rem;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 102px;
+  width: 6.5rem;
 }
 
 .square:focus {
@@ -67,4 +67,54 @@ ol, ul {
   color: #fff;
   font-size: 3rem;
   text-align: center;
+}
+
+.playagain {
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Iphone 6/7/8 plus */
+@media only screen and (max-width: 414px) {
+  .square {
+    height: 4rem;
+    width: 4rem;
+    font-size : 2rem;
+  }
+
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .body {
+    margin: 0px;
+  }
+}
+
+/* Iphone X and above */
+@media only screen and (max-width: 376px) {
+  .square {
+    height: 3.75rem;
+    width: 3.75rem;
+    font-size: 2.5rem;
+  }
+
+
+
+}
+
+@media only screen and (max-width: 321px) {
+  .square {
+    height: 3.25rem;
+    width: 3.25rem;
+  }
+
+
+
+  .results {
+    font-size: 1rem;
+  }
 }
